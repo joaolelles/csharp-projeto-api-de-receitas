@@ -57,7 +57,7 @@ public class UserController : ControllerBase
             }
 
         }
-        return BadRequest();
+        return NotFound();
     }
 
     // 9 - Sua aplicação deve ter o endpoint DEL /user
