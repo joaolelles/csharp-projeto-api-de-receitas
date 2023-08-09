@@ -34,7 +34,7 @@ public class UserController : ControllerBase
     public IActionResult Create([FromBody] User user)
     {
         _service.AddUser(user);
-        var newUser = _service.GetUser(user.Name);
+        var newUser = _service.GetUser(user.Email);
         return StatusCode(201, newUser);
     }
 
@@ -42,6 +42,22 @@ public class UserController : ControllerBase
     [HttpPut("{email}")]
     public IActionResult Update(string email, [FromBody] User user)
     {
+        // var userExists = _service.UserExists(email);
+        // if (userExists)
+        // {
+        //     try
+        //     {
+        //         _service.UpdateUser(user);
+        //         return NoContent();
+        //     }
+        //     catch
+        //     {
+
+        //         return BadRequest();
+        //     }
+
+        // }
+        // return BadRequest();
         throw new NotImplementedException();
     }
 
