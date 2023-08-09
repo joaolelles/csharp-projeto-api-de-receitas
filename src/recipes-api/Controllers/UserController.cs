@@ -48,7 +48,7 @@ public class UserController : ControllerBase
             try
             {
                 _service.UpdateUser(user);
-                return NoContent();
+                return Ok(user);
             }
             catch
             {
